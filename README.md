@@ -8,7 +8,7 @@
 
 LICENSE_BADGE
 VERSION_BADGE
-BUILD_BADGE
+![Build-and-Test](https://github.com/andreykarinskiy/CS-Template-Repository/workflows/Build-and-Test/badge.svg?branch=master)
 
 ------
 
