@@ -8,6 +8,7 @@
 
 ![LICENSE](https://img.shields.io/github/license/andreykarinskiy/CS-Template-Repository)
 ![VERSION](https://img.shields.io/github/v/release/andreykarinskiy/CS-Template-Repository?include_prereleases)
+![SIZE](https://img.shields.io/github/repo-size/andreykarinskiy/CS-Template-Repository)
 ![Build-and-Test](https://github.com/andreykarinskiy/CS-Template-Repository/workflows/Build-and-Test/badge.svg?branch=master)
 
 ------
