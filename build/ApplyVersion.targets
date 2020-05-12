@@ -2,8 +2,8 @@
   
   <!-- Read SemVer from version.json and write it to "Version" environment variable -->
   <UsingTask TaskName="GetSemVer"
-             TaskFactory="CodeTaskFactory"
-             AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
+             TaskFactory="RoslynCodeTaskFactory"
+             AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
     <ParameterGroup>
       
       <!-- Input parameter -->
