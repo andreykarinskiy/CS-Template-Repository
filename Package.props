@@ -1,0 +1,30 @@
+<Project>
+    <PropertyGroup>
+
+        <!-- Specifies the URL for the repository where the source code for the package resides and/or from which it's being built. -->
+        <!-- <RepositoryUrl></RepositoryUrl> -->
+
+        <!-- A URL for a 64x64 image with transparent background to use as the icon for the package in UI display. -->
+        <!-- <PackageIconUrl></PackageIconUrl> -->
+
+        <!-- Specifies the name for the resulting package. 
+        If not specified, the pack operation will default to using the AssemblyName or directory name as the name of the package. -->
+        <PackageId>NugetUniqName</PackageId>
+
+        <!-- A semicolon-delimited list of tags that designates the package. -->
+        <PackageTags>tag1;tag2</PackageTags>
+
+        <!-- An SPDX license identifier or expression. For example, Apache-2.0. -->
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        
+        <!-- Specifies the name of the source branch in the repository. 
+        When the project is packaged in a NuGet package, it's added to the package metadata. -->
+        <RepositoryBranch>master</RepositoryBranch>
+
+        <!-- Optional repository commit or changeset to indicate which source the package was built against. 
+        RepositoryUrl must also be specified for this property to be included. 
+        When the project is packaged in a NuGet package, this commit or changeset is added to the package metadata. -->
+        <RepositoryCommit></RepositoryCommit>
+
+    </PropertyGroup>
+</Project>

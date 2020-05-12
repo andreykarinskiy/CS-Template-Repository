@@ -1,0 +1,30 @@
+<Project>
+
+  <Import Project="$(SolutionDir)..\build\ApplyVersion.targets"/>
+
+  <PropertyGroup>
+    <VersionFile>$(SolutionDir)..\version.json</VersionFile>
+  </PropertyGroup>
+
+  <Target Name="ApplyVersion"
+          BeforeTargets="PreBuildEvent">
+    <GetSemVer InputFile="$(VersionFile)">
+      <Output TaskParameter="SemVer"
+              ItemName="value" />
+    </GetSemVer>
+
+    <!-- Write to "Version" property -->
+    <CreateProperty Value="@(value)">
+      <Output PropertyName="Version"
+              TaskParameter="Value" />
+    </CreateProperty>
+
+    <!-- Also write to "PackageVrsion" property -->
+    <CreateProperty Value="@(value)">
+      <Output PropertyName="PackageVersion"
+              TaskParameter="Value" />
+    </CreateProperty>
+   
+  </Target>
+
+</Project>

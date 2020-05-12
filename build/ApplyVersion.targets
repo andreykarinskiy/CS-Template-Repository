@@ -1,0 +1,51 @@
+<Project>
+  
+  <!-- Read SemVer from version.json and write it to "Version" environment variable -->
+  <UsingTask TaskName="GetSemVer"
+             TaskFactory="CodeTaskFactory"
+             AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
+    <ParameterGroup>
+      
+      <!-- Input parameter -->
+      <InputFile ParameterType="System.String"
+                 Required="true" />
+      
+      <!-- Output parameter -->
+      <SemVer ParameterType="System.String"
+              Output="true" />
+
+    </ParameterGroup>
+    
+    <Task>
+      <Using Namespace="System" />
+      <Using Namespace="System.IO" />
+      <Using Namespace="System.Text.RegularExpressions" />
+      <Code Type="Fragment"
+            Language="cs">
+        <![CDATA[ 
+        string text = File.ReadAllText(InputFile);
+        var pairs = Regex.Match(text, "(\"[a-zA-Z0-9_]+?\"):([^,]*)");
+        
+        if (pairs.Success)
+        {
+          for (var i = 0; i < pairs.Groups.Count; i++)
+          {
+            if (pairs.Groups[i].Value.Equals("\"SemVer\"", StringComparison.InvariantCultureIgnoreCase))
+            {
+              var versionNum = pairs
+                .Groups[i + 1]
+                .Value
+                .Replace("\"", null)
+                .Replace("}", null)
+                .Trim();
+
+              SemVer = versionNum;
+            }
+          }
+        }
+        ]]>
+      </Code>
+    </Task>
+  </UsingTask>  
+  
+</Project>
