@@ -3,16 +3,19 @@
   <PropertyGroup>
   
     <!-- Product name information for assembly manifest. -->
-    <Product>PRODUCT</Product>
+    <Product>@PRODUCT</Product>
 
     <!-- A semicolon-separated list of packages authors, matching the profile names on nuget.org. 
     These are displayed in the NuGet Gallery on nuget.org and are used to cross-reference packages by the same authors. -->
-    <Authors>AUTHOR</Authors>
+    <Authors>@AUTHOR</Authors>
 
     <!-- Company name. 
     If not specified, the default value is AssemblyName. -->
-    <Company>COMPANY</Company>
+    <Company>@COMPANY</Company>
 
   </PropertyGroup>
 
 </Project>
+
+
+

@@ -1,0 +1,24 @@
+<Project>
+  <PropertyGroup Condition="'$(IsTest)' == 'false'">
+
+    <!-- Specifies the name for the resulting package. 
+         If not specified, the pack operation will default to using the AssemblyName or directory name as the name of the package. -->
+    <PackageId>@PACKAGE_NAME</PackageId>
+    
+    <!-- Specifies the URL for the repository where the source code for the package resides and/or from which it's being built. -->
+    <RepositoryUrl>@REPOSITORY_URL</RepositoryUrl>
+
+    <!-- An SPDX license identifier or expression. For example, Apache-2.0. --><!--
+    <PackageLicenseExpression>%LICENSE_EXPR%</PackageLicenseExpression>-->
+
+    <!-- A semicolon-delimited list of tags that designates the package. -->
+    <PackageTags>tag1;tag2</PackageTags>
+    
+    <!-- Path to a license file. -->
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+
+    <!-- A URL for a 64x64 image with transparent background to use as the icon for the package in UI display. -->
+    <!-- <PackageIconUrl></PackageIconUrl> -->
+    
+  </PropertyGroup>
+</Project>

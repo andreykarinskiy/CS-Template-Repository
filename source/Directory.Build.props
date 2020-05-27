@@ -1,9 +1,8 @@
 <Project>
 
-  <Import Project="$(SolutionDir)..\Package.props"/>
-  <Import Project="$(SolutionDir)..\Copyrights.props"/>
+  <Import Project="$(SolutionDir)Package.props"/>
+  <Import Project="$(SolutionDir)Copyrights.props"/>
 
-  <Import Project="$(SolutionDir)..\build\Icon.props"/>
   <Import Project="$(SolutionDir)..\build\ApplyVersion.props"/>
 
   <!-- Project and package common metadata. -->
@@ -48,14 +47,22 @@
 
       </ItemGroup>
 
-    </When>
-    <Otherwise>
+      <!-- Include package ICON (and hide from Solution Explorer) -->
+      <ItemGroup>
+        <None Include="$(SolutionDir)..\icon.png"
+              Visible="false">
+          <Pack>True</Pack>
+          <PackagePath/>
+        </None>
+      </ItemGroup>
 
+    </When>
+    
+    <Otherwise>
       <!-- Else (is test) then disable some warnings. -->
       <PropertyGroup>
-        <NoWarn>IDE0051;IDE0060;CA1819</NoWarn>
+        <NoWarn>$([System.IO.File]::ReadAllText('$(SolutionDir)NoWarn.txt'))</NoWarn>
       </PropertyGroup>
-
     </Otherwise>
   </Choose>
 
