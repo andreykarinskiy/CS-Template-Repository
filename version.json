@@ -1,5 +1,5 @@
 {
     "$schema": "./build/schema/version.schema.json",
 
-    "SemVer": "0.1.0-alpha.1",
+    "SemVer": "0.1.0-alpha.1"
 }
